@@ -5,4 +5,4 @@
 [submodule "v4-api"]
 	path = v4-api
 	url = https://github.com/uvalib/v4-api.git
-  commit = b4a6ff8
+	commit = b4a6ff8
