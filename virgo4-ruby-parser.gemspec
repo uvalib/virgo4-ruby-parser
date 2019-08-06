@@ -6,9 +6,12 @@ Gem::Specification.new do |s|
   s.description = ''
   s.authors     = ['Nestor Walker']
   s.email       = 'naw4t@virginia.edu'
-  s.files       = Dir['lib/**/*', 'v4aprser/*']
   s.homepage    = ''
-  
-  s.add_dependency 'antlr4-runtime'
+
+  s.files       = Dir['lib/**/*', 'v4parser/*']
+
+  s.add_runtime_dependency 'antlr4-runtime', '~> 0.2'
+
+  s.require_paths = ['lib']
 
 end
