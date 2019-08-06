@@ -1,6 +1,3 @@
-[submodule "antlr4-ruby-runtime"]
-	path = antlr4-ruby-runtime
-	url = https://github.com/MODLanguage/antlr4-ruby-runtime
 [submodule "antlr4"]
 	path = antlr4
 	url = git@github.com:twalmsley/antlr4.git
