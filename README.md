@@ -1,26 +1,13 @@
 # Virgo 4 Ruby Parser
+
 This project contains the parser for Virgo 4 Pools that are based on Ruby.
-
-
-It contains 2 submodules for ease of access and to lock the version of each dependency.
-
-## Antlr4
-https://github.com/twalmsley/antlr4/tree/ruby_dev
-This is a modified version of Antlr 4 to support a Ruby language target.
 
 ## V4-API
 https://github.com/uvalib/v4-api
 The Virgo 4 API project contains VirgoQuery.g4 and VirgoQueryLexer.g4, which Antlr uses to generate the Ruby parser. The submodule is locked to the \*.g4 version used to generate the current v4parser code in this project.
 
 
-## `./lib/generated` contains the generated ruby parser.
-
-
-## Antlr4 Ruby Runtime
-https://github.com/MODLanguage/antlr4-ruby-runtime
-"This gem adds support for the ANTLR4 runtime for Ruby lexers and parsers generated from the Ruby langauge target"
-This gem should be added to the project using the parser and provides a wrapper for the generated code here. See this project's README for more info.
-
+## `./lib/java` contains the generated java parser.
 
 ## Update the git modules
 
@@ -31,26 +18,17 @@ This is only needed if the \*.g4 files change in https://github.com/uvalib/v4-ap
   `git config -f .gitmodules submodule.v4-api.commit b4a6ff8`
 2. Then update the code with `git submodule update`
 
-## Generate the Ruby Grammar
-This needed Java 11. Instructions adapted from [Antlr4 Ruby Runtime.](https://github.com/MODLanguage/antlr4-ruby-runtime)
+## Generate the Java parser
+Adapted from the [v4-api/query-syntax README](https://github.com/uvalib/v4-api/tree/master/query-syntax)
 
 ```
 $ git submodule update
-$ cd antlr4
-$ export MAVEN_OPTS="-Xmx1G"
-$ mvn clean
-$ mvn -DskipTests install
-$ cd ../lib/generated
-$ java -jar ~/.m2/repository/org/antlr/antlr4/4.7.3-SNAPSHOT/antlr4-4.7.3-SNAPSHOT-complete.jar \
-    -o <output_dir_full_path> `#full path to lib/generated` \
-    -listener \
-    -visitor \
-    -package VirgoQuery \
-    -Dlanguage=Ruby \
-    ../v4-api/v4parser/VirgoQueryLexer.g4 ../v4-api/VirgoQuery.g4
+$ cd virgo-api/query-syntax
+$ javac -sourcepath ./java/generated/:./java/test -cp ./tool/antlr-4.7.2-complete.jar -d ../../lib/java/ -encoding UTF-8  ./java/generated/edu/virginia/virgo/*.java ./java/test/edu/virginia/virgo/*.java
+
 ```
 
-This should generate new ruby code in ./lib/generated
+This should generate new ruby code in ./lib/java
 
 Commit any changes including the updated .gitmodules file
 
