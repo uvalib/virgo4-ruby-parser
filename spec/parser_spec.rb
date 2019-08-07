@@ -1,7 +1,8 @@
 require 'spec_helper'
 
-describe VirgoParser::Parse do
+describe VirgoParser::Ebsco do
   it 'works' do
-    VirgoParser::Parse.describe.should be_present
+    puts VirgoParser::Ebsco.main
+    expect(VirgoParser::Ebsco.describe).to eq('hello')
   end
 end

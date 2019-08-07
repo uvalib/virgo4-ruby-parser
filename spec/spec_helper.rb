@@ -4,5 +4,5 @@ Bundler.setup
 require "rspec"
 require "virgo_parser"
 
-Rspec.configure do |config|
+RSpec.configure do |config|
 end
