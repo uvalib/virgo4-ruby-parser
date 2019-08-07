@@ -1,0 +1,6 @@
+require 'virgo_parser/parse'
+require 'generated/VirgoQueryListener'
+require 'generated/VirgoQueryBaseListener'
+require 'generated/VirgoQueryVisitor'
+require 'generated/VirgoQueryLexer'
+require 'generated/VirgoQuery'

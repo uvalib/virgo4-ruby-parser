@@ -13,7 +13,7 @@ https://github.com/uvalib/v4-api
 The Virgo 4 API project contains VirgoQuery.g4 and VirgoQueryLexer.g4, which Antlr uses to generate the Ruby parser. The submodule is locked to the \*.g4 version used to generate the current v4parser code in this project.
 
 
-### The v4parser directory contains the generated ruby parser.
+## `./lib/generated` contains the generated ruby parser.
 
 
 ## Antlr4 Ruby Runtime
@@ -22,7 +22,7 @@ https://github.com/MODLanguage/antlr4-ruby-runtime
 This gem should be added to the project using the parser and provides a wrapper for the generated code here. See this project's README for more info.
 
 
-# Update the git modules
+## Update the git modules
 
 This is only needed if the \*.g4 files change in https://github.com/uvalib/v4-api
 
@@ -40,9 +40,9 @@ $ cd antlr4
 $ export MAVEN_OPTS="-Xmx1G"
 $ mvn clean
 $ mvn -DskipTests install
-$ cd ../v4parser
+$ cd ../lib/generated
 $ java -jar ~/.m2/repository/org/antlr/antlr4/4.7.3-SNAPSHOT/antlr4-4.7.3-SNAPSHOT-complete.jar \
-    -o <output_dir_full_path> \
+    -o <output_dir_full_path> `#full path to lib/generated` \
     -listener \
     -visitor \
     -package VirgoQuery \
@@ -50,7 +50,7 @@ $ java -jar ~/.m2/repository/org/antlr/antlr4/4.7.3-SNAPSHOT/antlr4-4.7.3-SNAPSH
     ../v4-api/v4parser/VirgoQueryLexer.g4 ../v4-api/VirgoQuery.g4
 ```
 
-This should generate new ruby code in ./v4parser
+This should generate new ruby code in ./lib/generated
 
 Commit any changes including the updated .gitmodules file
 

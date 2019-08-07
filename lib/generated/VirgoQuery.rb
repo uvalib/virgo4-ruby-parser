@@ -198,7 +198,7 @@ class VirgoQuery < Antlr4::Runtime::Parser
 		end
 	end
 
-	defquery_parts()
+	def query_parts()
 		return query_parts(0)
 	end
 
@@ -207,7 +207,7 @@ class VirgoQuery < Antlr4::Runtime::Parser
 		 _parentState = @_state_number
 		_localctx =  Query_partsContext.new(_ctx, _parentState)
 		 @_prevctx = _localctx
-		 _startState = 2
+		 @_startState = 2
 		enterRecursionRule(_localctx, 2, RULE_query_parts, _p)
 		begin
 			 _alt
@@ -245,7 +245,7 @@ class VirgoQuery < Antlr4::Runtime::Parser
 
 
 					_localctx =  Query_partsContext.new(_parentctx, _parentState)
-					pushNewRecursionContext(_localctx,@ _startState, RULE_query_parts)
+					pushNewRecursionContext(_localctx,@_startState, RULE_query_parts)
 					@_state_number = 31
 					if (!(precpred(@_ctx, 3)))
 					  raise Antlr4::Runtime::FailedPredicateException, self, "precpred(@_ctx, 3)")
@@ -727,7 +727,7 @@ class VirgoQuery < Antlr4::Runtime::Parser
 		 _parentState = @_state_number
 		_localctx =  Search_stringContext.new(_ctx, _parentState)
 		 @_prevctx = _localctx
-		 _startState = 16
+		 @_startState = 16
 		enterRecursionRule(_localctx, 16, RULE_search_string, _p)
 		begin
 			 _alt
@@ -769,7 +769,7 @@ class VirgoQuery < Antlr4::Runtime::Parser
 					when 1
 
 						_localctx =  Search_stringContext.new(_parentctx, _parentState)
-						pushNewRecursionContext(_localctx,@ _startState, RULE_search_string)
+						pushNewRecursionContext(_localctx,@_startState, RULE_search_string)
 						@_state_number = 81
 						if (!(precpred(@_ctx, 3)))
 						  raise Antlr4::Runtime::FailedPredicateException, self, "precpred(@_ctx, 3)")
@@ -782,7 +782,7 @@ class VirgoQuery < Antlr4::Runtime::Parser
 					when 2
 
 						_localctx =  Search_stringContext.new(_parentctx, _parentState)
-						pushNewRecursionContext(_localctx,@ _startState, RULE_search_string)
+						pushNewRecursionContext(_localctx, @_startState, RULE_search_string)
 						@_state_number = 85
 						if (!(precpred(@_ctx, 2)))
 						  raise Antlr4::Runtime::FailedPredicateException, self, "precpred(@_ctx, 2)")
@@ -856,7 +856,7 @@ class VirgoQuery < Antlr4::Runtime::Parser
 		 _parentState = @_state_number
 		_localctx =  Search_partContext.new(_ctx, _parentState)
 		 @_prevctx = _localctx
-		 _startState = 18
+		 @_startState = 18
 		enterRecursionRule(_localctx, 18, RULE_search_part, _p)
 		begin
 			 _alt
@@ -894,7 +894,7 @@ class VirgoQuery < Antlr4::Runtime::Parser
 
 
 					_localctx =  Search_partContext.new(_parentctx, _parentState)
-					pushNewRecursionContext(_localctx,@ _startState, RULE_search_part)
+					pushNewRecursionContext(_localctx, @_startState, RULE_search_part)
 					@_state_number = 100
 					if (!(precpred(@_ctx, 2)))
 					  raise Antlr4::Runtime::FailedPredicateException, self, "precpred(@_ctx, 2)")

@@ -1,2 +1,0 @@
-source 'https://rubygems.org'
-gem 'virgo-ruby-parser', github: 'uvalib/virgo4-ruby-parser'
