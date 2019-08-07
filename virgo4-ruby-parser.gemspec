@@ -12,8 +12,6 @@ Gem::Specification.new do |s|
 
   s.files       = Dir["{lib}/**/*.rb", "{lib}/generated/*", "*.md"]
 
-  s.add_runtime_dependency 'antlr4-runtime', '~> 0.2'
-
   s.require_path = 'lib'
 
 end
