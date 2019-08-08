@@ -1,4 +1,4 @@
-class VirgoParser::Ebsco
+class VirgoParser::EDS
   def self.parse query
     Main.parseForEDS query
   end
