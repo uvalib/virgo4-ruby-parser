@@ -23,7 +23,7 @@ Adapted from the [v4-api/query-syntax README](https://github.com/uvalib/v4-api/t
 
 ```
 $ git submodule update
-$ cd virgo-api/query-syntax
+$ cd v4-api/query-syntax
 $ javac -sourcepath ./java/generated/:./java/test -cp ./tool/antlr-4.7.2-complete.jar -d ../../lib/java/ -encoding UTF-8  ./java/generated/edu/virginia/virgo/*.java ./java/test/edu/virginia/virgo/*.java
 
 ```
