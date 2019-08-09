@@ -25,10 +25,12 @@ Adapted from the [v4-api/query-syntax README](https://github.com/uvalib/v4-api/t
 $ git submodule update
 $ cd v4-api/query-syntax
 $ javac -sourcepath ./java/generated/:./java/test -cp ./tool/antlr-4.7.2-complete.jar -d ../../lib/java/ -encoding UTF-8  ./java/generated/edu/virginia/virgo/*.java ./java/test/edu/virginia/virgo/*.java
+$ cd ../../ # back to project root
+$ jar cvf ./lib/virgo_parser.jar -C ./lib/java .
 
 ```
 
-This should generate new ruby code in ./lib/java
+This should generate new ruby code in ./lib/java. The jar file is then loaded by jruby.
 
 Commit any changes including the updated .gitmodules file
 
