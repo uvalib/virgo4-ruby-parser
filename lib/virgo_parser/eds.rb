@@ -1,5 +1,5 @@
 class VirgoParser::EDS
   def self.parse query
-    Main.parseForEDS query
+    VirgoParser::Main.parseForEDS query
   end
 end
