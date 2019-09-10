@@ -14,15 +14,14 @@ The Virgo 4 API project contains VirgoQuery.g4 and VirgoQueryLexer.g4, which Ant
 This is only needed if the \*.g4 files change in https://github.com/uvalib/v4-api
 
 0. Initialize and update the git modules with `git submodule init` and `git submodule update`
-1. Update the v4-api submodule to the desired commit.
-  `git config -f .gitmodules submodule.v4-api.commit b4a6ff8`
-2. Then update the code with `git submodule update`
+1. Update the v4-api submodule to the latest version
+    `git submodule update --remote`
 
 ## Generate the Java parser
 Adapted from the [v4-api/query-syntax README](https://github.com/uvalib/v4-api/tree/master/query-syntax)
 
 ```
-$ git submodule update
+$ git submodule update --remote
 $ cd v4-api/query-syntax
 $ javac -sourcepath ./java/generated/:./java/test -cp ./tool/antlr-4.7.2-complete.jar -d ../../lib/java/ -encoding UTF-8  ./java/generated/edu/virginia/virgo/*.java ./java/test/edu/virginia/virgo/*.java
 $ cd ../../ # back to project root
