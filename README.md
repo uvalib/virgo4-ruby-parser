@@ -1,42 +1,22 @@
 # Virgo 4 Ruby Parser
 
-This project contains the parser for Virgo 4 Pools that are based on Ruby.
+This project contains the parser for Virgo 4 Pools. It compiles the parser from the v4-api project and exposes it for jruby applications.
 
 ## V4-API
 https://github.com/uvalib/v4-api
 The Virgo 4 API project contains VirgoQuery.g4 and VirgoQueryLexer.g4, which Antlr uses to generate the Ruby parser. The submodule is locked to the \*.g4 version used to generate the current v4parser code in this project.
 
+## Usage
+Jruby is required.
+Add this to your Gemfile `gem 'virgo_parser', github: 'uvalib/virgo4-ruby-parser'`
+`bundle install` or `bundle update`
 
-## `./lib/java` contains the generated java parser.
+`require 'virgo_parser'`
+VirgoParser::EDS.parse("string_to_parse")
 
-## Update the git modules
-
-This is only needed if the \*.g4 files change in https://github.com/uvalib/v4-api
-
-0. Initialize and update the git modules with `git submodule init` and `git submodule update`
-1. Update the v4-api submodule to the latest version
-    `git submodule update --remote`
-
-## Generate the Java parser
-Adapted from the [v4-api/query-syntax README](https://github.com/uvalib/v4-api/tree/master/query-syntax)
-
-```
-$ git submodule update --remote
-$ cd v4-api/query-syntax
-$ javac -sourcepath ./java/generated/:./java/test -cp ./tool/antlr-4.7.2-complete.jar -d ../../lib/java/ -encoding UTF-8  ./java/generated/edu/virginia/virgo/*.java ./java/test/edu/virginia/virgo/*.java
-$ cd ../../ # back to project root
-$ jar cvf ./lib/virgo_parser.jar -C ./lib/java .
-
-```
-
-This should generate new ruby code in ./lib/java. The jar file is then loaded by jruby.
+## Update Instructions
+Update to the latest parser by running `./update.sh`
+This will update the submodule and regenerate the parser files. It then loads them into a jar file that is used by by jruby through this gem.
 
 Commit any changes including the updated .gitmodules file
-
-### Submodule notes
-[Git submodule docs](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
-Guidelines:
-- Populate the submodule directories with `git submodule init` and `git submodule update`
-- Generally, don't change code in the submodule directory. It shouldn't be necessary for this project.
-- Submodule config is located at `.gitmodules` and can be manually edited to update v4-api version.
 
